@@ -2,7 +2,6 @@
 
 import { generateStaticParamsFor, importPage } from "nextra/pages";
 import { useMDXComponents } from "@/mdx-components";
-import type { Metadata } from "next";
 
 type PageProps = Readonly<{
   params: Promise<{
@@ -11,9 +10,14 @@ type PageProps = Readonly<{
   }>;
 }>;
 
-export const metadata: Metadata = {};
-
 export const generateStaticParams = generateStaticParamsFor("mdxPath");
+
+export async function generateMetadata(props: PageProps) {
+  const params = await props.params;
+  const { metadata } = await importPage(params.mdxPath, params.lang);
+
+  return metadata;
+}
 
 const Wrapper = useMDXComponents().wrapper;
 
