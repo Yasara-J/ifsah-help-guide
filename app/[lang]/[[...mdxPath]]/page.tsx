@@ -10,13 +10,7 @@ type PageProps = Readonly<{
   }>;
 }>;
 
-export async function generateStaticParams() {
-  try {
-    return await generateStaticParamsFor("mdxPath")();
-  } catch {
-    return [];
-  }
-}
+export const generateStaticParams = generateStaticParamsFor("mdxPath");
 
 export async function generateMetadata(props: PageProps) {
   const params = await props.params;
