@@ -15,13 +15,6 @@ export const metadata: Metadata = {};
 
 export const generateStaticParams = generateStaticParamsFor("mdxPath");
 
-export async function generateMetadata(props: PageProps) {
-  const params = await props.params;
-  const { metadata } = await importPage(params.mdxPath, params.lang);
-
-  return metadata ?? {};
-}
-
 const Wrapper = useMDXComponents().wrapper;
 
 export default async function Page(props: PageProps) {
