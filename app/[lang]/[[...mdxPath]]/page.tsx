@@ -12,6 +12,8 @@ type PageProps = Readonly<{
 
 export const generateStaticParams = generateStaticParamsFor("mdxPath");
 
+export const metadata = {};
+
 export async function generateMetadata(props: PageProps) {
   const params = await props.params;
   const { metadata } = await importPage(params.mdxPath, params.lang);
