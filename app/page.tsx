@@ -1,5 +1,7 @@
-import { redirect } from 'next/navigation';
+import { redirect } from "next/navigation";
+
+export const metadata = {};
 
 export default function Page() {
-  redirect('/en');
+  redirect("/en");
 }
