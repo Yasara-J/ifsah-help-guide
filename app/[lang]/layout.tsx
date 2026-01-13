@@ -35,7 +35,7 @@ const navbar = (
     logo={
       <Image
         src="/logo.png"
-        alt="logo"
+        alt="iFSAH"
         width="0"
         height="0"
         className="w-[100px] h-auto"
