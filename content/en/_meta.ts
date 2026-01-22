@@ -6,6 +6,7 @@ const meta: MetaRecord = {
       breadcrumb: false,
     },
   },
+  "getting-started": "",
   "user-management": "",
   system: "",
   "issuer-management": "",

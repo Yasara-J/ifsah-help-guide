@@ -18,6 +18,7 @@ const nextConfig: NextConfig = {
     locales: ["en", "ar"],
     defaultLocale: "en",
   },
+  trailingSlash: true,
 };
 
 const withNextra = nextra({
